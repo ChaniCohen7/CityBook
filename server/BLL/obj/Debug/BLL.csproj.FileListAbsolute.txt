@@ -1,0 +1,15 @@
+D:\Programming\CitybookProject\server\BLL\bin\Debug\BLL.dll
+D:\Programming\CitybookProject\server\BLL\bin\Debug\BLL.pdb
+D:\Programming\CitybookProject\server\BLL\bin\Debug\DAL.dll
+D:\Programming\CitybookProject\server\BLL\bin\Debug\DTO.dll
+D:\Programming\CitybookProject\server\BLL\bin\Debug\EntityFramework.dll
+D:\Programming\CitybookProject\server\BLL\bin\Debug\DAL.pdb
+D:\Programming\CitybookProject\server\BLL\bin\Debug\DAL.dll.config
+D:\Programming\CitybookProject\server\BLL\bin\Debug\DTO.pdb
+D:\Programming\CitybookProject\server\BLL\bin\Debug\DTO.dll.config
+D:\Programming\CitybookProject\server\BLL\bin\Debug\EntityFramework.xml
+D:\Programming\CitybookProject\server\BLL\obj\Debug\BLL.csprojAssemblyReference.cache
+D:\Programming\CitybookProject\server\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+D:\Programming\CitybookProject\server\BLL\obj\Debug\BLL.csproj.CopyComplete
+D:\Programming\CitybookProject\server\BLL\obj\Debug\BLL.dll
+D:\Programming\CitybookProject\server\BLL\obj\Debug\BLL.pdb
