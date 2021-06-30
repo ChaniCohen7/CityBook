@@ -35,71 +35,41 @@ export class KidComponentComponent {
 
   hasUnitNumber = false;
   
-  newKid:Kid={
+   newKid:Kid={
     FullName:'',
     BornDate:new Date(),
     TZ:'',
     DadTZ:'',
   }
-  displayKid:Kid={
-    FullName:'',
-    BornDate:new Date(),
-    TZ:'',
-    DadTZ:'',
-  }
- 
-  fullNameToDisplay:any;
-  bornDate:any;
-  bornDateToDisplay:any;
-  TZToDisplay:any;
+  
+
   DadTZ:any;//for store the tz from the localStorage
   constructor(private fb: FormBuilder,private dataFormService:DataFormService ) {}
+
   ngOnInit(){
-      this.DadTZ=localStorage.getItem('T.Z.ForKids')=='';
+      this.DadTZ=localStorage.getItem('TZ');
       this.newKid.DadTZ=this.DadTZ;
-      this.fullNameToDisplay=localStorage.getItem('kidFullName');
-      this.TZToDisplay=localStorage.getItem('KidTZ');
-      this.bornDate=localStorage.getItem('kidBornDate');
-      this.bornDateToDisplay= this.parseDate(this.bornDate);
-      if(localStorage.getItem('kidFullName'))
-      this.fullNameToDisplay=localStorage.getItem('kidFullName');
-      else this.fullNameToDisplay="Full Name"
-      if(localStorage.getItem('KidTZ'))
-      this.TZToDisplay=localStorage.getItem('KidTZ');
-      else this.fullNameToDisplay="Enter Your Id Number"
+      this.newKid.FullName=localStorage.getItem('kidFullName')||'';
+      this.newKid.TZ=localStorage.getItem('KidTZ')||'';
+      this.newKid.BornDate=new Date(localStorage.getItem('kidBornDate')||'');
   }
   
  ngOnDestroy(){
-    localStorage.setItem('kidFullName',this.displayKid.FullName);
-    localStorage.setItem('KidTZ',this.displayKid.TZ);
-    localStorage.setItem('kidBornDate',this.displayKid.BornDate.toString());
+    localStorage.setItem('kidFullName',this.newKid.FullName);
+    localStorage.setItem('KidTZ',this.newKid.TZ);
+    localStorage.setItem('kidBornDate',this.newKid.BornDate.toString());
  }
   
   onSubmit(): void {
     
   }
- 
-  parseDate(value: any): Date | null {
-    if ((typeof value === 'string') && (value.includes('/'))) {
-      const str = value.split('/');
 
-      const year = Number(str[2]);
-      const month = Number(str[1]) - 1;
-      const date = Number(str[0]);
-
-      return new Date(year, month, date);
-    } else if((typeof value === 'string') && value === '') {
-      return new Date();
-    }
-    const timestamp = typeof value === 'number' ? value : Date.parse(value);
-    
-    return isNaN(timestamp) ? null : new Date(timestamp);
-  }
   addKid():void{
          if(this.newKid.FullName=='')
           this.hasUnitNumber = !this.hasUnitNumber;
         this.dataFormService.addKid(this.newKid).subscribe();
-  }
+        this.addKidForm()
+      }
   addKidForm(){
    
     this.hasUnitNumber = !this.hasUnitNumber;

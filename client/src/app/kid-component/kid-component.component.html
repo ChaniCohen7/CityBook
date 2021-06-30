@@ -11,7 +11,7 @@
         <div class="col">
           <mat-label>Full Name </mat-label>
           <mat-form-field class="full-width">
-            <input matInput placeholder="Full name" formControlName="fullName" [(ngModel)]="newKid.FullName" >
+            <input matInput  formControlName="fullName" [(ngModel)]="newKid.FullName" >
             <mat-error *ngIf="addressForm.controls['fullName'].hasError('required')">
               Full name is <strong>required</strong>
             </mat-error>
@@ -23,7 +23,7 @@
             <div class="col">
                 <mat-form-field class="full-width">
                  <mat-label>TZ </mat-label>
-                  <input matInput placeholder="TZ" formControlName="TZ" [(ngModel)]="newKid.TZ">
+                  <input matInput  formControlName="TZ" [(ngModel)]="newKid.TZ">
                   <mat-error *ngIf="addressForm.controls['TZ'].hasError('required')">
                     T.Z. is <strong>required</strong>
                   </mat-error>
@@ -53,7 +53,7 @@
       <div class="row" *ngIf="!hasUnitNumber">
         <div class="col">
           <button  mat-button type="button"  (click)="addKid() ">
-            + Save And Add kid
+            +  Add kid
           </button>
         </div>
       </div>

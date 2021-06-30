@@ -4,63 +4,52 @@
       <mat-card-title>User Form</mat-card-title>
     </mat-card-header>
     <mat-card-content>
-     
-            
+
+
       <div class="row">
         <div class="col">
           <mat-label>FirstName </mat-label>
           <mat-form-field class="full-width">
-            
-            <input matInput 
-            placeholder="{{firstNameToDisplay}}" 
-            formControlName="firstName"
-            value="tgyhujikolp" 
-            [(ngModel)]="newUser.FirstName"
-            [(ngModel)]="userDisplay.FirstName" 
-            >
+
+            <input matInput  formControlName="firstName" [(ngModel)]="newUser.FirstName">
             <mat-error *ngIf="addressForm.controls['firstName'].hasError('required')">
               First name is <strong></strong>
-              
+
             </mat-error>
           </mat-form-field>
         </div>
         <div class="col">
           <mat-label>Last Name </mat-label>
           <mat-form-field class="full-width">
-          
 
-            <input matInput placeholder="{{lastNameToDisplay}}"
-             formControlName="lastName"
-              [(ngModel)]="newUser.LastName"
-              [(ngModel)]="userDisplay.LastName" >
+
+            <input 
+            matInput 
+            formControlName="lastName"
+              [(ngModel)]="newUser.LastName">
             <mat-error *ngIf="addressForm.controls['lastName'].hasError('required')">
               Last name is <strong>required</strong>
             </mat-error>
           </mat-form-field>
         </div>
       </div>
-<div>
-      <div class="col">
-        <mat-label>TZ </mat-label>
-        <mat-form-field class="full-width">
+      <div>
+        <div class="col">
           <mat-label>TZ </mat-label>
-          <input matInput 
-          (blur)="saveTZ()" 
-          placeholder="{{TZToDisplay}}"
-           formControlName="TZ" 
-           [(ngModel)]='newUser.TZ'
-           [(ngModel)]='userDisplay.TZ'>
-          <mat-error *ngIf="addressForm.controls['TZ'].hasError('required')">
-            T.Z. is <strong>required</strong>
-          </mat-error>
-        </mat-form-field>
+          <mat-form-field class="full-width">
+            <input matInput (blur)="saveTZ()" formControlName="TZ"
+              [(ngModel)]='newUser.TZ' >
+            <mat-error *ngIf="addressForm.controls['TZ'].hasError('required')">
+              T.Z. is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
       </div>
-   </div>
-      
-      
+
+
       <div class="row" *ngIf="!hasUnitNumber">
         <div class="col">
-          <button mat-button type="button" (click)="addKids()"  >
+          <button mat-button type="button" (click)="addKids()">
             + Add kids
           </button>
         </div>
@@ -70,16 +59,13 @@
           <app-kid-component></app-kid-component>
         </div>
       </div>
-     
-        <div>
+
+      <div>
         <div class="col">
           <mat-label>Choose HMO </mat-label>
           <mat-form-field class="full-width">
-            <mat-select 
-            placeholder={{HMOToDisplay}}
-            formControlName="HMO" 
-            [(ngModel)]='newUser.HMO'
-             [(ngModel)]='userDisplay.HMO' >
+            <mat-select  formControlName="HMO" [(ngModel)]='newUser.HMO'
+             >
               <mat-option *ngFor="let H of HMO" [value]="H.abbreviation">
                 {{ H.name }}
               </mat-option>
@@ -88,34 +74,28 @@
               HMO is <strong>required</strong>
             </mat-error>
           </mat-form-field>
-        </div> 
+        </div>
       </div>
       <div>
         <div>
-        <mat-form-field appearance="fill">
-          <mat-label>Your Born Date:</mat-label>
-          <input 
-          placeholder="{{bornDateToDisplay}}" 
-          matInput [matDatepicker]="picker"
-              formControlName="Date" 
-              [(ngModel)]='newUser.BornDate'
-              [(ngModel)]='userDisplay.BornDate' >
-          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-          <mat-datepicker #picker></mat-datepicker>
-          <mat-error *ngIf="addressForm.controls['Date'].hasError('required')">
-            Date is <strong>required</strong>
-          </mat-error>
-        </mat-form-field>
-      
-      </div>
+          <mat-form-field appearance="fill">
+            <mat-label>Your Born Date:</mat-label>
+            <input  matInput [matDatepicker]="picker" formControlName="Date"
+              [(ngModel)]='newUser.BornDate' >
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+            <mat-error *ngIf="addressForm.controls['Date'].hasError('required')">
+              Date is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+
+        </div>
       </div>
       <div class="row">
         <div class="col">
-          <mat-radio-group  aria-checked="male"
-            formControlName="genus" 
-           [(ngModel)]='newUser.Genus'
-           [(ngModel)]='userDisplay.Genus'>
-            <mat-radio-button  value="male">male</mat-radio-button>
+          <mat-radio-group aria-checked="male" formControlName="genus" [(ngModel)]='newUser.Genus'
+            >
+            <mat-radio-button value="male">male</mat-radio-button>
             <mat-radio-button value="fmale">fmale</mat-radio-button>
           </mat-radio-group>
         </div>
@@ -124,10 +104,6 @@
     <mat-card-actions>
       <button mat-raised-button color="primary" type="submit">Submit</button>
     </mat-card-actions>
-    
-  </mat-card><a routerLink="/Instructions" >Instructions</a>
+
+  </mat-card><a routerLink="/Instructions">Instructions</a>
 </form>
-
-
-
-
