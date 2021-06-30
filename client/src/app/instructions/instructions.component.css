@@ -1,0 +1,17 @@
+h1{
+    color:blue; 
+    text-align:center;
+    font-weight: bold;
+}
+p{
+    text-align:center;
+    font-style: oblique;
+    font-weight: bolder;
+    font-size: 15pt;
+}
+a {
+    text-decoration:underline;
+    text-align: center;
+    margin: 40%;
+}
+    
