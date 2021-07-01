@@ -7,6 +7,7 @@ using System.Web.Http;
 
 namespace WebApp.Controllers
 {
+    [System.Web.Http.Cors.EnableCors(origins: "*", headers: "*", methods: "*")]
     public class KidRegistrationController : ApiController
     {
         // GET: api/KidRegistration

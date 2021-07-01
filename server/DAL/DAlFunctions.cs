@@ -33,7 +33,7 @@ namespace DAL
                     entity.SaveChanges();
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 throw new Exception("Fail to create Kids");
             }
